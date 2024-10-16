@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.section {
+  text-align: center;
+}
+
+.text {
+  font-size: 24px;
+  position: relative;
+  display: inline-block; /* Importante para a animação */
+  margin: 0; /* Remover margens indesejadas */
+}
+
+.rotate-in {
+  animation: rotateIn 1s forwards;
+}
+
+.rotate-out {
+  animation: rotateOut 1s forwards;
+}
+
+@keyframes rotateIn {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateOut {
+  0% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+}
