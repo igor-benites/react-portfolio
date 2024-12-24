@@ -1,0 +1,81 @@
+.section {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .experience-card {
+    width: 650px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #427AA1;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .experience-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .experience-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #EBF2FA;
+  }
+  
+  .experience-card ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    list-style: square;
+  }
+  
+  .experience-card li {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .experience-card {
+        width: 90%; /* Reduz o tamanho da card para 90% da largura da tela */
+        padding: 15px; /* Ajusta o padding para telas menores */
+    }
+
+    .experience-card h2 {
+        font-size: 1.3rem; /* Reduz o tamanho do título */
+    }
+
+    .experience-card h3 {
+        font-size: 1.1rem; /* Reduz o tamanho do subtítulo */
+    }
+
+    .experience-card li {
+        font-size: 0.95rem; /* Diminui o tamanho da lista */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-card {
+        width: 100%; /* Faz com que a card ocupe toda a largura da tela */
+        padding: 10px; /* Ajusta o padding para telas muito pequenas */
+    }
+
+    .experience-card h2 {
+        font-size: 1.2rem; /* Ajusta o tamanho do título */
+    }
+
+    .experience-card h3 {
+        font-size: 1rem; /* Ajusta o tamanho do subtítulo */
+    }
+
+    .experience-card li {
+        font-size: 0.9rem; /* Ajusta o tamanho da lista */
+    }
+}
