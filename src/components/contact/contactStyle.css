@@ -22,7 +22,7 @@ textarea {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  border: 1px solid #427AA1;
+  border: 1px solid #3D6DF8;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
@@ -31,7 +31,7 @@ textarea {
 /* Estilo para o placeholder */
 input::placeholder,
 textarea::placeholder {
-  color: #427AA1;
+  color: #3D6DF8;
   font-style: italic;
 }
 
@@ -39,15 +39,15 @@ textarea::placeholder {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #427AA1;
-  box-shadow: 0 0 8px #427AA1;
+  border-color: #3D6DF8;
+  box-shadow: 0 0 8px #3D6DF8;
 }
 
 /* Estilos do botão de envio */
 button {
   width: 100%;
   padding: 12px;
-  background-color: #427AA1;
+  background-color: #3D6DF8;
   color: EBF2FA;
   border: none;
   border-radius: 4px;

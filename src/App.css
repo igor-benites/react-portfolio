@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1e1e1e;
+  background-color: #1C1C2E;
 }
 
 @media (max-width: 768px) {
@@ -34,12 +34,12 @@ html {
 }
 
 .title {
-  color: #EBF2FA;
+  color: #E0E0E6;
   text-align: center;
 }
 
 .section {
-  color: #EBF2FA;
+  color: #A1A1B4;
   text-align: center;
 }
 

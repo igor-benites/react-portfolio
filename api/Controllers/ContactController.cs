@@ -14,8 +14,10 @@ public class ContactController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> SendEmail([FromBody] ContactForm form)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
+        if (!ModelState.IsValid || string.IsNullOrEmpty(form.Name) || string.IsNullOrEmpty(form.Email) || string.IsNullOrEmpty(form.Message))
+        {
+            return BadRequest(new { Message = "All fields are required." });
+        }
 
         await _emailService.SendEmailAsync(
             "test@gmail.com", // Receiver

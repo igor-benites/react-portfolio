@@ -19,23 +19,26 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all fields.");
+      return;
+    }  
+
     try {
       const response = await fetch("http://localhost:5026/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-  
-      if (response.ok) {
-        alert("Mensagem enviada com sucesso!");
-        setFormData({ name: "", email: "", message: "" }); // Reseta o formulário
-      } else {
-        alert("Erro ao enviar a mensagem.");
+      if (!response.ok) {
+        throw new Error('Server response was not ok');
       }
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("Erro ao enviar mensagem:", error);
-      alert("Ocorreu um problema ao enviar a mensagem.");
+      console.error("Error sending message:", error);
+      alert("An error occurred while sending the message.");
     }
   };
   
@@ -74,7 +77,7 @@ const Contact = () => {
         onChange={handleChange}
         style={{ height: '200px'}} 
       />
-      <button type="submit">Send</button>
+      <button onClick={handleSubmit} type="submit">Send</button>
     </ContainerScroll>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import './Name.css';
+import "./Name.css";
 
 const Name = () => {
   const [text, setText] = useState(""); // Stores the current text being displayed
@@ -14,7 +14,7 @@ const Name = () => {
 
     const handleTyping = () => {
       const currentWord = words[currentWordIndex];
-      
+
       if (isDeleting) {
         // Deleting characters
         setText((prev) => currentWord.substring(0, prev.length - 1));
@@ -40,21 +40,35 @@ const Name = () => {
   }, [text, isDeleting, currentWordIndex, speed]);
 
   return (
-    <div>
-      <h1 className="title">Igor Flores</h1>
-      <div 
-      className="subtitle" 
-      style={{ fontSize: "2rem", 
-      fontFamily: "monospace", 
-      textAlign: "center"
-       }}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div style={{ textAlign: "center" }}>
+        <h1 className="title">Igor Flores</h1>
+        <div
+          className="subtitle"
+          style={{
+            fontSize: "2rem",
+            fontFamily: "monospace",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minWidth: "0",
+          }}
         >
-          <span>{text}</span>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span>{text}</span>
+            <span className="empty" style={{ marginLeft: "5px" }}></span>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
